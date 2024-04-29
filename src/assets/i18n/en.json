@@ -1,0 +1,30 @@
+{
+  "header": {
+    "marcas": "Our Brands",
+    "modelos": "Models",
+    "configurador": "Configure Your Car",
+    "contacto": "Contact",
+    "noticias": "News",
+    "login": "Log in",
+    "register": "Register",
+    "logout": "Log out",
+    "cuenta": "My account",
+    "ajustes": "Settings",
+    "vehiculos configurados": "Configured vehicles",
+    "cerrar sesion": "Log out",
+    "hola bienvenido": "Hello, welcome"
+  },
+  "footer": {
+    "text": "Visit our social networks and stay updated with everything latest in the world of automobiles, get inspired with the most sought-after models and much more.",
+    "brands": "Brands",
+    "location": "Location",
+    "policy": "Policies",
+    "contact": "Contact",
+    "where": "Where are we?",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "cookies": "Cookies policy",
+    "use": "Terms of use",
+    "copyright": "All rights reserved."
+  }
+}

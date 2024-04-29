@@ -1,0 +1,31 @@
+{
+  "header": {
+
+   "marcas": "Nuestras Marcas",
+    "modelos": "Modelos",
+    "configurador": "Configura Tu Coche",
+    "contacto": "Contacto",
+    "noticias": "Noticias",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar sesión",
+    "cuenta": "Mi cuenta",
+    "ajustes": "Ajustes",
+    "vehiculos configurados": "Vehículos configurados",
+    "cerrar sesion": "Cerrar sesión",
+    "hola bienvenido": "Hola, bienvenido"
+  },
+  "footer": {
+    "text": "Visita nuestras redes sociales y entérate de todo lo último en el mundo del automóvil, inspírate con los modelos más buscados y mucho más.",
+    "brands": "Marcas",
+    "location": "Ubicación",
+    "policy": "Políticas",
+    "contact": "Contacto",
+    "where": "¿Dónde estamos?",
+    "legal": "Aviso legal",
+    "privacy": "Política de privacidad",
+    "cookies": "Política de cookies",
+    "use": "Condiciones de uso",
+    "copyright": "Todos los derechos reservados."
+  }
+}
