@@ -1,11 +1,11 @@
 {
   "header": {
 
-   "marcas": "Nuestras Marcas",
-    "modelos": "Modelos",
-    "configurador": "Configura Tu Coche",
-    "contacto": "Contacto",
-    "noticias": "Noticias",
+    "movies": "Películas",
+    "contact": "Contacto",
+    "vose": "VOSE",
+    "card-member": "Tarjeta Socio",
+    "events": "Eventos",
     "login": "Iniciar sesión",
     "register": "Registrarse",
     "logout": "Cerrar sesión",
@@ -17,15 +17,17 @@
   },
   "footer": {
     "text": "¡No te pierdas ni un solo estreno! Síguenos en nuestras redes sociales y mantente al día con lo último en el mundo del cine, descubre nuestras promociones exclusivas y más.",
-    "peliculas": "Películas",
-    "location": "Ubicación",
-    "policy": "Políticas",
+    "movies": "Películas",
+    "billboard": "Cartelera",
+    "vose": "VOSE",
+    "comingSoon": "Próximamente",
+    "aboutUs": "Sobre Nosotros",
+    "other": "Otros",
     "contact": "Contacto",
-    "where": "¿Dónde estamos?",
-    "legal": "Aviso legal",
+    "getToKnowUs": "Conócenos",
+    "card-member": "Tarjeta Socio",
     "privacy": "Política de privacidad",
-    "cookies": "Política de cookies",
-    "use": "Condiciones de uso",
+    "events": "Eventos",
     "copyright": "Todos los derechos reservados."
   }
 }

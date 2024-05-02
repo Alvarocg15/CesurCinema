@@ -27,10 +27,10 @@ export class HeaderComponent  {
    }
 
 
-  // isAccountOrAdminRoute() {
-  //   const route = this.router.url;
-  //   return route === '/cuenta' || route === '/administracion';
-  // }
+   isAccountOrAdminRoute() {
+     const route = this.router.url;
+     return route === '/cuenta' || route === '/administracion';
+   }
 
   // isAuthenticated() {
   //   return this.authService.isAuthenticated();
