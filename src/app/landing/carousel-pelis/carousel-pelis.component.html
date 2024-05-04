@@ -1,0 +1,31 @@
+<h1 class=" mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Peliculas Destacadas</h1>
+<div class="h-[600px]">
+  <swiper
+      [effect]="'coverflow'"
+      [slidesPerView]="'auto'"
+      [centeredSlides]="true"
+      [spaceBetween]="10"
+      [navigation]="true"
+      [pagination]="{ clickable: true }"
+      [autoplay]="{ delay: 3000, disableOnInteraction: false}"
+      [loop]="false"
+      [coverflowEffect]="{
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2.5,
+        slideShadows: true
+      }"
+    >
+       <ng-template *ngFor="let peli of pelis" swiperSlide>
+        <img class="h-[268px]" [src]="peli.destacadas_image" alt="Slide" />
+        <div class="text-center mt-2">
+          <h3>{{ peli.destacadas_titulo }}</h3>
+          <h5>Año: {{ peli.destacadas_ano }}</h5>
+          <h5>Duración: {{ peli.destacadas_duracion }} mins.</h5>
+          <button class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
+        </div>
+      </ng-template>
+    </swiper>
+
+</div>

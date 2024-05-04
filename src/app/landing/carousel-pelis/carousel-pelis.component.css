@@ -1,0 +1,41 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/effect-coverflow';
+
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 420px;
+  background: linear-gradient(180deg, rgb(236, 213, 232) 0%, rgb(50, 112, 118) 100%);
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 182px;
+  height: 268px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: auto;
+  height: 268px;
+}
+
+button {
+  background-color: #171616;
+  color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 9999px;
+
+  .hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+}

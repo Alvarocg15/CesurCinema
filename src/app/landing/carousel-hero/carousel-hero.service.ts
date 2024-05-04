@@ -19,7 +19,6 @@ export class CarouselHeroService {
 
     getCarouselHero(): Observable<CarouselHero[]> {
       let respuesta = this.http.get<CarouselHero[]>(this.serviceUrl);
-      console.log(respuesta);
       return respuesta;
     }
 }
