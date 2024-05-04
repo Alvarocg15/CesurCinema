@@ -5,19 +5,10 @@
       [navigation]="true"
       [pagination]="{ clickable: true }"
       [autoplay]="{ delay: 3000, disableOnInteraction: false}"
-      [loop]="true"
+      [loop]="false"
     >
-      <ng-template swiperSlide>
-        <img class="h-[440px] object-cover" src="../../../assets/images/carousel-hero/carousel-hero1.jpg" alt="Slide 1" />
-      </ng-template>
-      <ng-template swiperSlide>
-        <img src="../../../assets/images/carousel-hero/carousel-hero2.png" alt="Slide 2" />
-      </ng-template>
-      <ng-template swiperSlide>
-        <img src="../../../assets/images/carousel-hero/carousel-hero3.png" alt="Slide 3" />
-      </ng-template>
-      <ng-template swiperSlide>
-        <img class="h-[440px] object-cover" src="../../../assets/images/carousel-hero/carousel-hero4.jpg" alt="Slide 4" />
+      <ng-template *ngFor="let image of images" swiperSlide>
+        <img class="h-[440px] object-cover" [src]="image.imagen" alt="Slide" />
       </ng-template>
     </swiper>
 </div>
