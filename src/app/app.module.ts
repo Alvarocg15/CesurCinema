@@ -10,6 +10,8 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LandingComponent } from './landing/landing.component';
+import { CarouselHeroComponent } from './landing/carousel-hero/carousel-hero.component';
+import { SwiperModule } from 'swiper/angular';
 
 registerLocaleData(localeEs);
 export function HttpLoaderFactory(http: HttpClient) {
@@ -19,12 +21,14 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     LandingComponent,
+    CarouselHeroComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
+    SwiperModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
