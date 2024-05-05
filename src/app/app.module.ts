@@ -14,6 +14,8 @@ import { CarouselHeroComponent } from './landing/carousel-hero/carousel-hero.com
 import { SwiperModule } from 'swiper/angular';
 import { CarouselPelisComponent } from './landing/carousel-pelis/carousel-pelis.component';
 import { CarteleraComponent } from './cartelera/cartelera.component';
+import { VoseComponent } from './vose/vose.component';
+import { ProximamenteComponent } from './proximamente/proximamente.component';
 
 registerLocaleData(localeEs);
 export function HttpLoaderFactory(http: HttpClient) {
@@ -26,6 +28,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CarouselHeroComponent,
     CarouselPelisComponent,
     CarteleraComponent,
+    VoseComponent,
+    ProximamenteComponent,
   ],
   imports: [
     BrowserModule,
