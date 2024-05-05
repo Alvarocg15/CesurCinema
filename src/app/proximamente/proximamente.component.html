@@ -9,7 +9,7 @@
       <h1 class="text-white font-black">{{ peli.proximamente_titulo}}</h1>
       <h2>{{ peli.proximamente_duracion}} minutos.</h2>
       <p>{{ peli.proximamente_descripcion}}</p>
-      <button class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
+      <button (click)="guardarId(peli.proximamente_id)" class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
     </div>
   </div>
 </div>

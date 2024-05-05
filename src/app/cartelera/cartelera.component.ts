@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Cartelera } from './interface/cartelera.interface';
 import { CarteleraService } from './cartelera.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cartelera',
@@ -10,11 +11,17 @@ export class CarteleraComponent {
 
   cartelera: Cartelera[] = [];
 
-  constructor(private carteleraService: CarteleraService) { }
+  constructor(private carteleraService: CarteleraService, private router: Router) { }
 
   ngOnInit() {
     this.carteleraService.getCartelera().subscribe(data => {
       this.cartelera = data;
     });
   }
+
+  guardarId(id: string) {
+    localStorage.setItem('peliId', id);
+    this.router.navigate(['/pelicula']);
+  }
+
 }

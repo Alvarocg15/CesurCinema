@@ -16,6 +16,7 @@ import { CarouselPelisComponent } from './landing/carousel-pelis/carousel-pelis.
 import { CarteleraComponent } from './cartelera/cartelera.component';
 import { VoseComponent } from './vose/vose.component';
 import { ProximamenteComponent } from './proximamente/proximamente.component';
+import { PeliculaComponent } from './pelicula/pelicula.component';
 
 registerLocaleData(localeEs);
 export function HttpLoaderFactory(http: HttpClient) {
@@ -30,6 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CarteleraComponent,
     VoseComponent,
     ProximamenteComponent,
+    PeliculaComponent,
   ],
   imports: [
     BrowserModule,

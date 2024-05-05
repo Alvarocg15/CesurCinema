@@ -4,6 +4,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow } from 'swiper';
 import { CarouselPelis } from './interface/carousel-pelis.interface';
 import { CarouselPelisService } from './carousel-pelis.service';
+import { Router } from '@angular/router';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow]);
@@ -18,7 +19,7 @@ export class CarouselPelisComponent {
 
   pelis: CarouselPelis[] = [];
 
-  constructor(private carouselPelisService: CarouselPelisService) { }
+  constructor(private carouselPelisService: CarouselPelisService, private router: Router) { }
 
   ngOnInit() {
     this.carouselPelisService.getCarouselPelis().subscribe(data => {
@@ -27,4 +28,10 @@ export class CarouselPelisComponent {
     }
     );
   }
+
+  guardarId(id: string) {
+    localStorage.setItem('peliId', id);
+    this.router.navigate(['/pelicula']);
+  }
+
 }

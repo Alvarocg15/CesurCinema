@@ -9,7 +9,7 @@
       <h1 class="text-white font-black">{{ peli.cartelera_titulo}}</h1>
       <h2>{{ peli.cartelera_duracion}} minutos.</h2>
       <p>{{ peli.cartelera_descripcion}}</p>
-      <button class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
+      <button (click)="guardarId(peli.cartelera_id)" class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
     </div>
   </div>
 </div>
