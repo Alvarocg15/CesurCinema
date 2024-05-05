@@ -61,3 +61,15 @@ h3{
 .prueba button {
   margin-top: 0px; /* Ajusta este valor a tu gusto */
 }
+
+h1{
+  padding-top: 60px;
+  padding-left: 30px;
+  font-size: 2.25rem/* 36px */;
+  line-height: 2.5rem/* 40px */;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity));
+}

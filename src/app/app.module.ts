@@ -13,6 +13,7 @@ import { LandingComponent } from './landing/landing.component';
 import { CarouselHeroComponent } from './landing/carousel-hero/carousel-hero.component';
 import { SwiperModule } from 'swiper/angular';
 import { CarouselPelisComponent } from './landing/carousel-pelis/carousel-pelis.component';
+import { CarteleraComponent } from './cartelera/cartelera.component';
 
 registerLocaleData(localeEs);
 export function HttpLoaderFactory(http: HttpClient) {
@@ -24,6 +25,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     LandingComponent,
     CarouselHeroComponent,
     CarouselPelisComponent,
+    CarteleraComponent,
   ],
   imports: [
     BrowserModule,
