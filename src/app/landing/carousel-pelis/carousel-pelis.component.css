@@ -39,3 +39,25 @@ button {
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
+
+h5{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+
+.prueba{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prueba h3,
+.prueba h5 {
+  margin: 3px;
+}
+
+.prueba button {
+  margin-top: 0px; /* Ajusta este valor a tu gusto */
+}
