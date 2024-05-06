@@ -1,3 +1,4 @@
+<!-- Altura de la imagen inicia era h-[440px]-->
 <div class="h-[440px]">
   <swiper
       [slidesPerView]="1"
@@ -8,7 +9,7 @@
       [loop]="false"
     >
       <ng-template *ngFor="let image of images" swiperSlide>
-        <img class="h-[440px] object-cover" [src]="image.imagen" alt="Slide" />
+        <img class="h-[500px] object-cover" [src]="image.imagen" alt="Slide" />
       </ng-template>
     </swiper>
 </div>

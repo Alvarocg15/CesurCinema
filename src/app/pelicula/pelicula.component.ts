@@ -8,20 +8,17 @@ import { PeliculaService } from './pelicula.service';
   styleUrl: './pelicula.component.css'
 })
 export class PeliculaComponent {
-  pelicula: Pelicula = {} as Pelicula;
+  // pelicula: Pelicula = {} as Pelicula;
+  pelicula: Pelicula[] = [];
 
   constructor(private peliculaService: PeliculaService) { }
 
   ngOnInit() {
     let peliculaId = localStorage.getItem('peliId');
-    if (peliculaId !== null) {
-      this.peliculaService.getPeliculaById(peliculaId).subscribe(pelicula => {
-        console.log(pelicula);
-        this.pelicula = pelicula;
-        console.log(this.pelicula);
-        this.eliminarId();
-      });
-    }
+    this.peliculaService.getPeliculaById(peliculaId!).subscribe(data => {
+      this.pelicula = data;
+      console.log(this.pelicula);
+    });
   }
 
   eliminarId() {

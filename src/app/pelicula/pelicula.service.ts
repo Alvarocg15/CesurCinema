@@ -17,11 +17,11 @@ export class PeliculaService {
 
     constructor(private http: HttpClient) { }
 
-    
 
-    getPeliculaById(id: string): Observable<Pelicula> {
+
+    getPeliculaById(id: string): Observable<Pelicula[]> {
       let url = `${this.serviceUrl}${id}`;
-      let respuesta = this.http.get<Pelicula>(url);
+      let respuesta = this.http.get<Pelicula[]>(url);
       return respuesta;
     }
 }
