@@ -1,10 +1,22 @@
-<div class="flex flex-col items-center bg-[#90a6ad] mb-12">
-  <div *ngFor="let peli of pelicula" class="flex flex-row w-[90%] mt-12 border-t border-gray-300 pt-12">
-    <img class="h-[268px] w-[182px]" [src]="peli.pelicula_image">
-    <div class="ml-10 mt-7">
-      <h1 class="text-white font-black">{{ peli.pelicula_titulo}}</h1>
-      <h2>{{ peli.pelicula_duracion}} minutos.</h2>
-      <p>{{ peli.pelicula_descripcion}}</p>
+<div class="flex flex-col items-center font-medium bg-[#90a6ad] mb-12">
+  <div *ngFor="let peli of pelicula" class="flex flex-col w-[90%] mt-12 border-t border-gray-300 pt-12">
+    <div class="ml-10">
+      <p class="text-white text-[50px]">{{ peli.pelicula_titulo}}</p>
+      <div class="flex flex-row mt-5">
+        <h2>{{ peli.pelicula_ano }}</h2>
+        <h2 class="px-2">·</h2>
+        <h2> {{ peli.pelicula_duracion}} minutos</h2>
+      </div>
+    </div>
+    <!--Div Imagen y Trailer-->
+    <div class="flex flex-row ml-40 mt-5">
+      <img class="h-[452px] w-auto" [src]="peli.pelicula_image">
+      <iframe width="60%" height="452" [src]="safeUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="ml-10 mt-10 w-[80%]">
+      <p class="text-white text-3xl font-medium mt-5">Sinopsis</p>
+      <p class="text-lg font-medium">{{ peli.pelicula_descripcion}}</p>
       <button class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
     </div>
   </div>
