@@ -5,7 +5,11 @@
       <div class="flex flex-row mt-5">
         <h2>{{ peli.pelicula_ano }}</h2>
         <h2 class="px-2">·</h2>
-        <h2> {{ peli.pelicula_duracion}} minutos</h2>
+        <h2>{{ peli.pelicula_duracion}} minutos</h2>
+        <h2 class="px-2">·</h2>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="ipc-icon ipc-icon--star sc-5931bdee-4 eKJPfQ pt-1" viewBox="0 0 24 24" fill="yellow" role="presentation"><path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path></svg>
+        <h2>{{ peli.pelicula_rating}}/10</h2>
       </div>
     </div>
     <!--Div Imagen y Trailer-->
@@ -15,8 +19,10 @@
     </div>
 
     <div class="ml-10 mt-10 w-[80%]">
-      <p class="text-white text-3xl font-medium mt-5">Sinopsis</p>
+      <p class="text-white text-3xl font-medium mt-5">Argumento</p>
       <p class="text-lg font-medium">{{ peli.pelicula_descripcion}}</p>
+
+      <app-horarios></app-horarios>
       <button class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
     </div>
   </div>

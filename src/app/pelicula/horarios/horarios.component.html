@@ -1,0 +1,6 @@
+<p class="text-white text-3xl font-medium mt-5">Horarios</p>
+
+<div *ngFor="let horario of horarios">
+  <button class="bg-white hover:bg-[#90a6ad] hover:border-2 hover:text-white text-black font-bold py-2 px-4 rounded-full">{{ horario.proyeccion_hora_comienzo }}</button>
+  <p>{{ horario.proyeccion_sala.sala_descripcion }}</p>
+</div>
