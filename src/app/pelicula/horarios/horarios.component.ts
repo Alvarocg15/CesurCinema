@@ -12,15 +12,19 @@ export class HorariosComponent {
 
   horarios: Horarios[] = [];
   horarioId: string = '';
+  selectedHorario:any = null;
 
   constructor(private horariosService: HorariosService, private router: Router) { }
 
   ngOnInit(){
     let horarioId = localStorage.getItem('peliId');
     this.horariosService.getHorariosById(horarioId!).subscribe(data => {
-      console.log(data);
       this.horarios = data;
     });
+  }
+
+  selectedHorarioChange(horario: Horarios){
+    this.selectedHorario = horario;
   }
 
 }
