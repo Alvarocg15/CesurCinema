@@ -27,4 +27,12 @@ export class HorariosComponent {
     this.selectedHorario = horario;
   }
 
+  selectedSalaId(salaId:number){
+    localStorage.setItem('salaId', salaId.toString()); // Convert salaId to a string
+  }
+  guardarDatos(){
+    localStorage.setItem('horario', JSON.stringify(this.selectedHorario));
+    this.router.navigate(['/entradas']);
+  }
+
 }

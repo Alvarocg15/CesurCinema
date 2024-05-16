@@ -5,7 +5,8 @@
   <div *ngFor="let horario of horarios" class="mt-[5%]">
     <button class="bg-white border-2 hover:bg-[#90a6ad] hover:border-2 hover:text-white text-black font-bold py-2 px-4 rounded-full ml-10"
       [class.pulsado]="selectedHorario === horario"
-      (click)="selectedHorarioChange(horario)">
+      (click)="selectedHorarioChange(horario)"
+      (click)="selectedSalaId(horario.proyeccion_sala.sala_id)">
       {{ horario.proyeccion_hora_comienzo }}
     </button>
   </div>
@@ -15,5 +16,5 @@
   [class.hidden]="selectedHorario !== horario"
   >
     <p class="text-lg font-medium pb-2">{{ horario.proyeccion_sala.sala_descripcion }}</p>
-    <button class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
+    <button (click)="guardarDatos()" class="bg-[#171616] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full">Comprar entradas</button>
 </div>

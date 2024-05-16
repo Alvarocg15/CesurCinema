@@ -1,0 +1,25 @@
+.pantalla{
+  background-color:white;
+  height: 120px;
+  width: 18rem;
+  margin: 15px 0;
+  transform: rotateX(-48deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+.container{
+  perspective: 1000px;
+  margin-bottom: 30px;
+  width: 80%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.asiento-ocupado {
+  fill: white;
+  pointer-events: none;
+}
+
+.asiento-pulsado {
+  fill: lime;
+}

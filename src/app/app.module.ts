@@ -18,6 +18,7 @@ import { VoseComponent } from './vose/vose.component';
 import { ProximamenteComponent } from './proximamente/proximamente.component';
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import { HorariosComponent } from './pelicula/horarios/horarios.component';
+import { EntradasComponent } from './entradas/entradas.component';
 
 registerLocaleData(localeEs);
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProximamenteComponent,
     PeliculaComponent,
     HorariosComponent,
+    EntradasComponent,
   ],
   imports: [
     BrowserModule,

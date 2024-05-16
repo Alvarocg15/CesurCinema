@@ -5,13 +5,15 @@ import { CarteleraComponent } from './cartelera/cartelera.component';
 import { VoseComponent } from './vose/vose.component';
 import { ProximamenteComponent } from './proximamente/proximamente.component';
 import { PeliculaComponent } from './pelicula/pelicula.component';
+import { EntradasComponent } from './entradas/entradas.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'cartelera', component: CarteleraComponent },
   { path: 'vose', component: VoseComponent },
   { path: 'proximamente', component: ProximamenteComponent },
-  { path: 'pelicula', component: PeliculaComponent }
+  { path: 'pelicula', component: PeliculaComponent },
+  { path: 'entradas', component: EntradasComponent}
 ];
 
 @NgModule({
