@@ -21,6 +21,7 @@ export class PeliculaComponent {
       this.pelicula = data;
       this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.pelicula[0].pelicula_trailer);
       console.log(this.pelicula);
+      localStorage.setItem('TituloPeli', JSON.stringify(this.pelicula[0].pelicula_titulo));
     });
   }
 
