@@ -29,5 +29,33 @@
     "privacy": "Política de privacidad",
     "events": "Eventos",
     "copyright": "Todos los derechos reservados."
+  },
+  "register": {
+    "title": "Crear una cuenta",
+    "subtitle": "Introduce tus datos para registrarte",
+    "name": "Nombre",
+    "lastName": "Apellidos",
+    "email": "Correo electrónico",
+    "phone": "Teléfono Móvil",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "register": "Crear cuenta",
+    "login": "Iniciar sesión",
+    "errors": {
+      "name": "El nombre es obligatorio",
+      "lastName": "Los apellidos son obligatorios",
+      "email": "El correo electrónico es obligatorio",
+      "emailInvalid": "El correo electrónico no es válido",
+      "phone": "El teléfono es obligatorio",
+      "phoneInvalid": "El teléfono no es válido",
+      "password": "La contraseña es obligatoria",
+      "passwordInvalid": "La contraseña debe tener al menos 8 caracteres",
+      "confirmPassword": "La confirmación de la contraseña es obligatoria",
+      "confirmPasswordInvalid": "Las contraseñas no coinciden"
+    },
+    "conditions": "Al hacer clic en 'Crear cuenta', aceptas nuestros",
+    "terms": "Términos de servicio",
+    "and": "y",
+    "privacy": "Política de privacidad"
   }
 }
