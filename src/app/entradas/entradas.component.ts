@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
 import { EntradasService } from './entradas.service';
 import { Asiento } from './interface/asiento.interface';
+import { CurrencyPipe } from '@angular/common';
 
-
+declare var paypal:any;
 
 @Component({
   selector: 'app-entradas',
@@ -17,9 +18,38 @@ export class EntradasComponent {
   sala: string = '';
   butacasSeleccionadas: Asiento[] = [];
   precio: number = 0;
+  paidFor: boolean = false;
 
   constructor(private entradaService: EntradasService) { }
 
+  @ViewChild('paypal', { static: true }) paypalElement: ElementRef | undefined;
+
+  ngAfterViewInit(): void {
+    paypal
+      .Buttons({
+        createOrder: (data:any, actions:any) => {
+          // Set up the transaction
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                // currency_code: 'EUR',
+                value: this.precio // Replace this with the total amount
+              }
+            }]
+          });
+        },
+        onApprove: async (data:any, actions:any) => {
+          // Capture the funds from the transaction
+          const order = await actions.order.capture();
+          this.paidFor = true;
+          console.log(order);
+        },
+        onError: (err: any) => {
+          console.log(err);
+        }
+      })
+      .render(this.paypalElement!.nativeElement);
+  }
 
   ngOnInit() {
     this.entradaService.getEntradas().subscribe(data => {

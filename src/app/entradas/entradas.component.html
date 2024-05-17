@@ -79,9 +79,9 @@
       </div>
     </div>
     <div *ngIf="butacasSeleccionadas.length > 0" class="w-[90%] text-white text-3xl font-medium items-center justify-start flex flex-row">
-      <p>Precio: {{ precio }} €</p>
+      <p>Precio:</p>
+      <p class="pl-2 text-black">{{ precio }} €</p>
     </div>
     <div #paypal></div>
-    <button *ngIf="butacasSeleccionadas.length > 0" class="bg-[#171616] hover:bg-gray-700 text-white text-lg font-bold py-2 px-4 rounded-full">Pagar</button>
   </div>
 </div>
