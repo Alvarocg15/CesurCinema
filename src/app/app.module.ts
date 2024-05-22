@@ -21,6 +21,7 @@ import { HorariosComponent } from './pelicula/horarios/horarios.component';
 import { EntradasComponent } from './entradas/entradas.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CuentaComponent } from './cuenta/cuenta.component';
 
 registerLocaleData(localeEs);
 export function HttpLoaderFactory(http: HttpClient) {
@@ -39,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HorariosComponent,
     EntradasComponent,
     RegistroComponent,
+    CuentaComponent,
   ],
   imports: [
     BrowserModule,

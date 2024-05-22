@@ -7,6 +7,7 @@ import { ProximamenteComponent } from './proximamente/proximamente.component';
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import { EntradasComponent } from './entradas/entradas.component';
 import { RegistroComponent } from './registro/registro.component';
+import { CuentaComponent } from './cuenta/cuenta.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'pelicula', component: PeliculaComponent },
   { path: 'entradas', component: EntradasComponent},
   { path: 'registro', component: RegistroComponent },
-  { path: 'cuenta', component: VoseComponent},
+  { path: 'cuenta', component: CuentaComponent},
   { path: 'administracion', component: ProximamenteComponent}
 ];
 

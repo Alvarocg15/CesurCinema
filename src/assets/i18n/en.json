@@ -9,8 +9,7 @@
     "register": "Register",
     "logout": "Log out",
     "cuenta": "My account",
-    "ajustes": "Settings",
-    "vehiculos configurados": "Configured vehicles",
+    "entradasCompradas": "My tickets",
     "cerrar sesion": "Log out",
     "hola bienvenido": "Hello, welcome"
   },
@@ -65,5 +64,8 @@
     "terms": "Terms of Service",
     "and": "and",
     "privacy": "Privacy Policy"
+  },
+  "admin": {
+    "bienvenido": "Welcome"
   }
 }

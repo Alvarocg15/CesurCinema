@@ -10,8 +10,7 @@
     "register": "Registrarse",
     "logout": "Cerrar sesión",
     "cuenta": "Mi cuenta",
-    "ajustes": "Ajustes",
-    "vehiculos configurados": "Vehículos configurados",
+    "entradasCompradas": "Mis Entradas",
     "cerrar sesion": "Cerrar sesión",
     "hola bienvenido": "Hola, bienvenido"
   },
@@ -68,5 +67,8 @@
     "terms": "Términos de servicio",
     "and": "y",
     "privacy": "Política de privacidad"
+  },
+  "admin": {
+    "bienvenido": "¡Bienvenido/a"
   }
 }

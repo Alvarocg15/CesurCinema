@@ -20,7 +20,7 @@
                 <span class="sr-only">Toggle sidebar</span>
             </button>
             <a href="/" class="flex items-center justify-between mr-4">
-                <img src="assets/images/logo.svg" class="ml-6 w-16 scale-[2.2]" alt="Flowbite Logo" />
+                <img src="../../../../assets/images/logo1-removebg-preview.png" class="ml-6 w-16 scale-[2.2]" alt="Flowbite Logo" />
             </a>
         </div>
         <div class="flex items-center lg:order-2">
@@ -48,12 +48,6 @@
                             {{'header.cuenta' | translate }}
                         </a>
                     </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">
-                            {{'header.ajustes' | translate }}
-                        </a>
-                    </li>
                 </ul>
                 <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                     <li>
@@ -65,7 +59,7 @@
                                     d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z">
                                 </path>
                             </svg>
-                            {{'header.vehiculos configurados' | translate }}</a>
+                            {{'header.entradasCompradas' | translate }}</a>
                     </li>
                 </ul>
                 <ul class="py-1 text-gray-700 dark:text-gray-300 w-full" aria-labelledby="dropdown">
@@ -187,7 +181,7 @@
                                     </div>
                                     <!-- Si el usuario no está autenticado -->
                                     <div *ngIf="!isAuthenticated()">
-                                    
+
                                         <button (click)="openDialogLogin()"
                                             class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                                             id="menu-item-0">{{'header.login' | translate }}
