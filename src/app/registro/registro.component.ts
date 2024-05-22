@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from '../../enviroments/enviroment';
 import { LoginComponent } from '../shared/components/login/login.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -15,7 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class RegistroComponent {
   registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private snackBar: MatSnackBar,public dialog: MatDialog) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private snackBar: MatSnackBar,public dialog: MatDialog,private router: Router,) {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       secondLastName: ['', Validators.required],
@@ -58,6 +59,10 @@ export class RegistroComponent {
               duration: 3000,
               horizontalPosition: 'right',
             });
+
+            setTimeout(() => {
+              this.router.navigate(['/']);
+            }, 2000);
           }
         },
         error => {

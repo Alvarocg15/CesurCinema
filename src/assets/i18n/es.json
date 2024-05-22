@@ -57,5 +57,16 @@
     "terms": "Términos de servicio",
     "and": "y",
     "privacy": "Política de privacidad"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "subtitle": "Introduce tus datos para iniciar",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "login": "Iniciar sesión",
+    "conditions": "Al hacer clic en 'Iniciar sesión', aceptas nuestros",
+    "terms": "Términos de servicio",
+    "and": "y",
+    "privacy": "Política de privacidad"
   }
 }

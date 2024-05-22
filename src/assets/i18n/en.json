@@ -54,5 +54,16 @@
     "terms": "Terms of Service",
     "and": "and",
     "privacy": "Privacy Policy"
+  },
+  "login": {
+    "title": "Log in",
+    "subtitle": "Enter your details to log in",
+    "email": "Email",
+    "password": "Password",
+    "login": "Log in",
+    "conditions": "By clicking on 'Log in', you agree to our",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy"
   }
 }

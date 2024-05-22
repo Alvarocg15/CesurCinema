@@ -45,13 +45,15 @@ export class LoginComponent {
             this.dialogRef.close();
             // Decodificar el token
             const decodedToken = jwtDecode<CustomJwtPayload>(response.token);
-
+            console.log("Decoded token"+JSON.stringify(decodedToken));
             // Verificar el rol del usuario
             if (decodedToken.authorities.includes('ROLE_ADMIN')) {
               // Si el usuario es un administrador, redirigir a /administracion
+              console.log("Por que no va 1");
               this.router.navigate(['/administracion']);
             } else {
               // Si el usuario no es un administrador, redirigir a /cuenta
+              console.log("Por que no va 2");
               this.router.navigate(['/cuenta']);
             }
 

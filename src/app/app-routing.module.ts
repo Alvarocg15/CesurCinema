@@ -15,7 +15,9 @@ const routes: Routes = [
   { path: 'proximamente', component: ProximamenteComponent },
   { path: 'pelicula', component: PeliculaComponent },
   { path: 'entradas', component: EntradasComponent},
-  { path: 'registro', component: RegistroComponent }
+  { path: 'registro', component: RegistroComponent },
+  { path: 'cuenta', component: VoseComponent},
+  { path: 'administracion', component: ProximamenteComponent}
 ];
 
 @NgModule({
