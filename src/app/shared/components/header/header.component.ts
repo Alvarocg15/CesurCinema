@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { CustomJwtPayload } from '../../../interface/CustomJwtPayload.interface'
 import { TranslateService } from '@ngx-translate/core';
 import { HeaderService } from './header.service';
+import { Usuario } from '../../../cuenta/interface/usuario.interface';
 
 
 @Component({
@@ -15,6 +16,14 @@ import { HeaderService } from './header.service';
 })
 export class HeaderComponent  {
   isScrolled = false;
+  user:Usuario[] = [];
+
+  ngOnInit() {
+    //this.usuario = this.authService.decodedToken as CustomJwtPayload;
+    this.HeaderService.getUsuario().subscribe((data) => {
+      this.user = data;
+    });
+  }
 
   constructor(public dialog: MatDialog,
      private authService: AuthService,

@@ -27,7 +27,12 @@ export class CuentaService {
     let idUser = this.authService.getUserId();
     let url = `${this.serviceUrl}/${idUser}`;
     let respuesta = this.http.get<Usuario[]>(url);
-    console.log("Usuario"+respuesta);
+    return respuesta;
+  }
+  updateUsuario(usuario: Usuario[]) {
+    let idUser = this.authService.getUserId();
+    let url = `${environment.apiUrl}/usuario/${idUser}`;
+    let respuesta = this.http.put<Usuario[]>(url, usuario);
     return respuesta;
   }
 }

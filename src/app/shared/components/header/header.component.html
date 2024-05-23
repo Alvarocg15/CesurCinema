@@ -37,8 +37,8 @@
             <!-- Dropdown menu -->
             <div class="hidden absolute top-14 right-0 transform translate-x-0 mt-3 z-50 my-4 w-56 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl" id="dropdown">
                 <div class="py-3 px-4">
-                    <span class="block text-sm font-semibold text-gray-900 dark:text-white">{{ decodedToken.name }} {{
-                        decodedToken.surname }}</span>
+                    <span class="block text-sm font-semibold text-gray-900 dark:text-white">{{ user[0]?.user_first_name }} {{
+                      user[0]?.user_last_name }}</span>
                     <span class="block text-sm text-gray-900 truncate dark:text-white">{{ decodedToken.sub }}</span>
                 </div>
                 <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
@@ -168,7 +168,7 @@
                                     <!-- Si el usuario está autenticado -->
                                     <div *ngIf="isAuthenticated()">
                                         <p class="text-gray-700 block px-4 py-2 text-sm">{{'header.hola bienvenido' | translate }}
-                                            {{decodedToken.name}} {{ decodedToken.surname }}!
+                                            {{ user[0]?.user_first_name}} {{ user[0]?.user_last_name }}!
                                         </p>
                                         <a class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                                             id="menu-item-0"

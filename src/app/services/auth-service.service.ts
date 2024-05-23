@@ -24,7 +24,6 @@ export class AuthService {
     const token = sessionStorage.getItem('token') || localStorage.getItem('token');
     if (token) {
       this.decodedToken = jwtDecode(token);
-      console.log(this.decodedToken);
       return this.decodedToken.id;
     }
     return null;

@@ -1,13 +1,26 @@
 import { Injectable } from '@angular/core';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../../services/auth-service.service';
+import { environment } from '../../../../enviroments/enviroment';
+import { Usuario } from '../../../cuenta/interface/usuario.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeaderService {
 
-  constructor(public dialog: MatDialog) { }
+  private serviceUrl = `${environment.apiUrl}/usuarios`;
+
+  constructor(public dialog: MatDialog,private http: HttpClient, private authService: AuthService) { }
+
+  getUsuario() {
+    let idUser = this.authService.getUserId();
+    let url = `${this.serviceUrl}/${idUser}`;
+    let respuesta = this.http.get<Usuario[]>(url);
+    return respuesta;
+  }
 
   openDialog() {
     let dialogRef;

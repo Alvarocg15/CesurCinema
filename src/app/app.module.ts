@@ -20,7 +20,7 @@ import { PeliculaComponent } from './pelicula/pelicula.component';
 import { HorariosComponent } from './pelicula/horarios/horarios.component';
 import { EntradasComponent } from './entradas/entradas.component';
 import { RegistroComponent } from './registro/registro.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CuentaComponent } from './cuenta/cuenta.component';
 
 registerLocaleData(localeEs);
@@ -48,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     SharedModule,
     SwiperModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
