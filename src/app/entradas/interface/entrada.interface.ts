@@ -10,4 +10,5 @@ export interface Entrada {
   entrada_proyeccion: Horarios;
   entrada_sala: Sala;
   entrada_asiento: Asiento;
+  entrada_fecha: Date;
 }
