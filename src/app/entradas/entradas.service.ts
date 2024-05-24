@@ -3,7 +3,7 @@ import { Asiento } from "./interface/asiento.interface";
 import { Injectable } from "@angular/core";
 import { environment } from "../../enviroments/enviroment";
 import { HttpClient } from "@angular/common/http";
-import { Entrada } from "./interface/entrada.interface";
+import { Entrada } from './interface/entrada.interface';
 
 
 @Injectable({
@@ -31,6 +31,13 @@ export class EntradasService {
     console.log(proyeccionId);
     let url = `${this.serviceUrl2}/${proyeccionId}`;
     let respuesta = this.http.get<Entrada[]>(url);
+    return respuesta;
+  }
+
+  addEntradas(entrada: any): Observable<Entrada[]> {
+    let url = `${environment.apiUrl}/addEntrada`;
+    let respuesta = this.http.post<Entrada[]>(url, entrada);
+    console.log(entrada);
     return respuesta;
   }
 }

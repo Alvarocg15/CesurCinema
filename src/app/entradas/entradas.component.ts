@@ -2,25 +2,45 @@ import { AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
 import { EntradasService } from './entradas.service';
 import { Asiento } from './interface/asiento.interface';
 import { CurrencyPipe } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmacionCompraComponent } from './confirmacion-compra/confirmacion-compra.component';
+import { CustomJwtPayload } from '../interface/CustomJwtPayload.interface';
+import { Pelicula } from '../pelicula/interface/pelicula.interface';
+import { PeliculaService } from '../pelicula/pelicula.service';
+import { SalaService } from '../pelicula/horarios/sala.service';
+import { Sala } from '../pelicula/horarios/interface/sala.interface';
+import { AuthService } from '../services/auth-service.service';
 
 declare var paypal:any;
+
+interface EntradaId {
+  entrada_user: number;
+  entrada_pelicula: string;
+  entrada_proyeccion: number;
+  entrada_sala: number;
+  entrada_asiento: number;
+}
 
 @Component({
   selector: 'app-entradas',
   templateUrl: './entradas.component.html',
   styleUrl: './entradas.component.css'
 })
+
 export class EntradasComponent {
 
   ocupados: any[] = [];
   filas: any[] = [];
   titulopeli: string = '';
-  sala: string = '';
+  sala: Sala[] = [];
   butacasSeleccionadas: Asiento[] = [];
   precio: number = 0;
   paidFor: boolean = false;
+  usuario!: CustomJwtPayload;
+  peli: Pelicula[] = [];
 
-  constructor(private entradaService: EntradasService) { }
+
+  constructor(private entradaService: EntradasService, private dialog: MatDialog, private peliculaService: PeliculaService, private salaService: SalaService, private authService: AuthService ) { }
 
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef | undefined;
 
@@ -43,6 +63,12 @@ export class EntradasComponent {
           const order = await actions.order.capture();
           this.paidFor = true;
           console.log(order);
+          // Open the purchase confirmation dialog
+          this.dialog.open(ConfirmacionCompraComponent);
+          setTimeout(() => {
+            this.dialog.closeAll();
+            this.addEntradas();
+          }, 3000);
         },
         onError: (err: any) => {
           console.log(err);
@@ -78,6 +104,8 @@ export class EntradasComponent {
       }, {});
       this.filas = Object.keys(grouped).map(key => ({ fila: key, asientos: grouped[Number(key)] }));
     });
+    this.getPeliculaById();
+    this.getSalaById();
   }
 
   mostrarInfoAsieto(asiento: Asiento) {
@@ -106,5 +134,39 @@ export class EntradasComponent {
     let response2 = JSON.parse(sala!);
     this.sala = response2.proyeccion_sala.sala_nombre;
 
+  }
+
+  getPeliculaById() {
+    let peliculaId = localStorage.getItem('peliId');
+    this.peliculaService.getPeliculaById(peliculaId!).subscribe((peliculaId) => {
+      this.peli = peliculaId;
+      console.log("pelieee"+JSON.stringify(this.peli));
+    });
+  }
+
+  getSalaById() {
+    let salaId = localStorage.getItem('salaId');
+    this.salaService.getSalaById(salaId!).subscribe((salaId) => {
+      this.sala = salaId;
+      console.log("sala"+JSON.stringify(this.sala));
+    });
+  }
+
+  addEntradas() {
+    let horario = localStorage.getItem('horario');
+    let horarioObj = JSON.parse(horario!);
+    let proyeccionId = horarioObj.proyeccion_id;
+    this.butacasSeleccionadas.forEach(asiento => {
+      const entrada: EntradaId = {
+        entrada_user: this.authService.getUserId(),
+        entrada_pelicula: this.peli[0].pelicula_id,
+        entrada_proyeccion: proyeccionId,
+        entrada_sala: this.sala[0].sala_id,
+        entrada_asiento: asiento.asiento_id
+      };
+      this.entradaService.addEntradas(entrada).subscribe(data => {
+        console.log(data);
+      });
+    });
   }
 }

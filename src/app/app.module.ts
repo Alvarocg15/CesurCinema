@@ -22,6 +22,8 @@ import { EntradasComponent } from './entradas/entradas.component';
 import { RegistroComponent } from './registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CuentaComponent } from './cuenta/cuenta.component';
+import { ConfirmacionCompraComponent } from './entradas/confirmacion-compra/confirmacion-compra.component';
+import { MisEntradasComponent } from './cuenta/mis-entradas/mis-entradas.component';
 
 registerLocaleData(localeEs);
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,6 +43,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     EntradasComponent,
     RegistroComponent,
     CuentaComponent,
+    ConfirmacionCompraComponent,
+    MisEntradasComponent,
   ],
   imports: [
     BrowserModule,
