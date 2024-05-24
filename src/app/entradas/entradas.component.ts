@@ -33,6 +33,7 @@ export class EntradasComponent {
   filas: any[] = [];
   titulopeli: string = '';
   sala: Sala[] = [];
+  nombre_sala: string = '';
   butacasSeleccionadas: Asiento[] = [];
   precio: number = 0;
   paidFor: boolean = false;
@@ -148,6 +149,7 @@ export class EntradasComponent {
     let salaId = localStorage.getItem('salaId');
     this.salaService.getSalaById(salaId!).subscribe((salaId) => {
       this.sala = salaId;
+      this.nombre_sala = this.sala[0].sala_nombre;
       console.log("sala"+JSON.stringify(this.sala));
     });
   }
