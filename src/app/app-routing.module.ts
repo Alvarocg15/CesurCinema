@@ -11,6 +11,7 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { RoleGuard } from './services/role-guard.service';
 import { MisEntradasComponent } from './cuenta/mis-entradas/mis-entradas.component';
+import { AdministracionComponent } from './administracion/administracion.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'entradas', component: EntradasComponent},
   { path: 'registro', component: RegistroComponent },
   { path: 'cuenta', component: CuentaComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_USER' }},
-  { path: 'administracion', component: ProximamenteComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_ADMIN' }},
+  { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_ADMIN' }},
   { path: 'misEntradas', component: MisEntradasComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_USER' }}
 ];
 

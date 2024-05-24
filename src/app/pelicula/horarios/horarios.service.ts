@@ -24,4 +24,9 @@ export class HorariosService {
     return respuesta;
   }
 
+  getProyecciones() {
+    let respuesta = this.http.get<Horarios[]>(this.serviceUrl);
+    return respuesta;
+  }
+
 }
