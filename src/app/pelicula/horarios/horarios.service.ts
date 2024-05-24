@@ -29,4 +29,10 @@ export class HorariosService {
     return respuesta;
   }
 
+  deleteProyeccion(id: number) {
+    let url = `${environment.apiUrl}/proyeccion/${id}`;
+    let respuesta = this.http.delete(url);
+    return respuesta;
+  }
+
 }

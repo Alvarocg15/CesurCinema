@@ -39,7 +39,6 @@
                 <div class="py-3 px-4">
                     <span class="block text-sm font-semibold text-gray-900 dark:text-white">{{ user[0]?.user_first_name }} {{
                       user[0]?.user_last_name }}</span>
-                    <span class="block text-sm text-gray-900 truncate dark:text-white">{{ decodedToken.sub }}</span>
                 </div>
                 <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                     <li>
@@ -49,7 +48,7 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
+                <ul *ngIf="getAccountLabel() === 'Mi cuenta'" class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                     <li>
                         <a [routerLink]="isAuthenticated() ? 'misEntradas' : '/login'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
                             class="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><svg
@@ -62,6 +61,20 @@
                             {{'header.entradasCompradas' | translate }}</a>
                     </li>
                 </ul>
+
+              <ul *ngIf="getAccountLabel() === 'Administración'" class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
+                <li>
+                    <a [routerLink]="isAuthenticated() ? 'misEntradas' : '/login'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
+                        class="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><svg
+                            class="mr-2 w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z">
+                            </path>
+                        </svg>
+                        {{'header.addProyeccion' | translate }}</a>
+                </li>
+            </ul>
                 <ul class="py-1 text-gray-700 dark:text-gray-300 w-full" aria-labelledby="dropdown">
                     <li class="hover:cursor-pointer">
                         <a (click)="logout()"

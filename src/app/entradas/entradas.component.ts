@@ -158,9 +158,10 @@ export class EntradasComponent {
     let horario = localStorage.getItem('horario');
     let horarioObj = JSON.parse(horario!);
     let proyeccionId = horarioObj.proyeccion_id;
+    let userId = this.authService.isAuthenticated() ? this.authService.getUserId() : 19;
     this.butacasSeleccionadas.forEach(asiento => {
       const entrada: EntradaId = {
-        entrada_user: this.authService.getUserId(),
+        entrada_user: userId,
         entrada_pelicula: this.peli[0].pelicula_id,
         entrada_proyeccion: proyeccionId,
         entrada_sala: this.sala[0].sala_id,

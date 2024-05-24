@@ -23,6 +23,7 @@
             <th class="px-6 py-3 border-b border-black">Pelicula</th>
             <th class="px-6 py-3 border-b border-black">Sala</th>
             <th class="px-6 py-3 border-b border-black">Hora Cominezo</th>
+            <th class="px-6 py-3 border-b border-black">Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +39,15 @@
             </td>
             <td class="px-6 py-3 border-b border-black text-center">
               {{ proyeccion.proyeccion_hora_comienzo }}
+            </td>
+            <td class="px-6 py-3 border-b border-black text-center">
+              <button id="delete" class="px-6 py-3"
+              (click)="deleteProyeccion(proyeccion.proyeccion_id)">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+            </button>
             </td>
           </tr>
         </tbody>

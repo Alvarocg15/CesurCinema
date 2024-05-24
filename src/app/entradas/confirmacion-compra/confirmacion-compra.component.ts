@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth-service.service';
 
 @Component({
   selector: 'app-confirmacion-compra',
@@ -9,17 +10,25 @@ import { Router } from '@angular/router';
         <path fill="#c8e6c9" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#4caf50" d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z"></path>
         </svg>
       <h1 class="font-semibold text-xl text-gray-800">Compra realizada con éxito.</h1>
-      <h3 class="font-semibold text-xl text-gray-800">Redirigiendo a Mis Entradas.</h3>
+      <h3 *ngIf="loggeado" class="font-semibold text-xl text-gray-800">Redirigiendo a Mis Entradas.</h3>
+      <h3 *ngIf="!loggeado" class="font-semibold text-xl text-gray-800">Redirigiendo a la pantalla de Inicio.</h3>
     </div>
   `
 })
 export class ConfirmacionCompraComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
+
+  loggeado = false;
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigateByUrl('/misEntradas');
+      if (this.authService.isAuthenticated()) {
+        this.loggeado = true;
+        this.router.navigateByUrl('/misEntradas');
+      }else {
+        this.router.navigateByUrl('');
+      }
     }, 3000);
   }
 }
