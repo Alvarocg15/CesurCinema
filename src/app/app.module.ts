@@ -25,6 +25,7 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 import { ConfirmacionCompraComponent } from './entradas/confirmacion-compra/confirmacion-compra.component';
 import { MisEntradasComponent } from './cuenta/mis-entradas/mis-entradas.component';
 import { AdministracionComponent } from './administracion/administracion.component';
+import { AddProyeccionComponent } from './administracion/add-proyeccion/add-proyeccion.component';
 
 registerLocaleData(localeEs);
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ConfirmacionCompraComponent,
     MisEntradasComponent,
     AdministracionComponent,
+    AddProyeccionComponent,
   ],
   imports: [
     BrowserModule,

@@ -24,4 +24,9 @@ export class SalaService {
     return respuesta;
   }
 
+  getSalas() {
+    let respuesta = this.http.get<Sala[]>(`${environment.apiUrl}/salas`);
+    return respuesta;
+  }
+
 }

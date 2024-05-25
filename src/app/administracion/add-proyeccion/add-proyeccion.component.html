@@ -1,0 +1,37 @@
+<div class="bg-green-200 py-32 px-10 min-h-screen ">
+
+  <div class="mb-10">
+    <h1 class="text-3xl tracking-tighter pb-1">Añadir Proyeccion</h1>
+  </div>
+  <div class="bg-white p-10 md:w-3/4 lg:w-1/2 mx-auto">
+
+    <form [formGroup]="registerForm">
+
+      <select formControlName="proyeccion_pelicula">
+        <option *ngFor="let pelicula of peliculas" [value]="pelicula.cartelera_id">{{pelicula.cartelera_titulo}}</option>
+      </select>
+
+      <select formControlName="proyeccion_sala">
+        <option *ngFor="let sala of salas" [value]="sala.sala_id">{{sala.sala_nombre}}</option>
+      </select>
+
+      <div class="flex items-center mb-5">
+        <label for="Hora" class="inline-block w-20 mr-6 text-right
+                                 font-bold text-gray-600">Hora Comienzo</label>
+        <input formControlName="proyeccion_hora_comienzo"
+               class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400
+                      text-gray-600 placeholder-gray-400
+                      outline-none" type="tel"
+                      name="hora" id="hora" placeholder="00:00:00"
+                      >
+      </div>
+
+    <!-- Botón de envío -->
+    <button (click)="addProyeccion()"
+      class="py-3 px-8 bg-green-400 text-white font-bold">
+      Añadir
+    </button>
+
+    </form>
+  </div>
+</div>

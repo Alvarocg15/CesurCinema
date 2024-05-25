@@ -38,7 +38,7 @@ export class HeaderComponent  {
 
    isAccountOrAdminRoute() {
      const route = this.router.url;
-     return route === '/cuenta' || route === '/misEntradas' || route === '/administracion';
+     return route === '/cuenta' || route === '/misEntradas' || route === '/administracion' || route === '/addProyeccion';
    }
 
   isAuthenticated() {

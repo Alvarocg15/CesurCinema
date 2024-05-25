@@ -12,6 +12,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { RoleGuard } from './services/role-guard.service';
 import { MisEntradasComponent } from './cuenta/mis-entradas/mis-entradas.component';
 import { AdministracionComponent } from './administracion/administracion.component';
+import { AddProyeccionComponent } from './administracion/add-proyeccion/add-proyeccion.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'cuenta', component: CuentaComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_USER' }},
   { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_ADMIN' }},
-  { path: 'misEntradas', component: MisEntradasComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_USER' }}
+  { path: 'misEntradas', component: MisEntradasComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_USER' }},
+  { path: 'addProyeccion', component: AddProyeccionComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: 'ROLE_ADMIN' }}
 ];
 
 @NgModule({
