@@ -11,15 +11,18 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class PeliculaComponent {
   pelicula: Pelicula[] = [];
   safeUrl: SafeResourceUrl | undefined;
+  isLoading = false;
 
   constructor(private peliculaService: PeliculaService, private sanitizer: DomSanitizer) { }
 
 
   ngOnInit() {
+    this.isLoading = true;
     let peliculaId = localStorage.getItem('peliId');
     this.peliculaService.getPeliculaById(peliculaId!).subscribe(data => {
       this.pelicula = data;
       this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.pelicula[0].pelicula_trailer);
+      this.isLoading = false;
       console.log(this.pelicula);
       localStorage.setItem('TituloPeli', JSON.stringify(this.pelicula[0].pelicula_titulo));
     });

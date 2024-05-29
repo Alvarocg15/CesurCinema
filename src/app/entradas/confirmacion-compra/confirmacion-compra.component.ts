@@ -22,13 +22,15 @@ export class ConfirmacionCompraComponent {
   loggeado = false;
 
   ngOnInit() {
-    setTimeout(() => {
-      if (this.authService.isAuthenticated()) {
-        this.loggeado = true;
+    if (this.authService.isAuthenticated()) {
+      this.loggeado = true;
+      setTimeout(() => {
         this.router.navigateByUrl('/misEntradas');
-      }else {
+      }, 3000);
+    }else {
+      setTimeout(() => {
         this.router.navigateByUrl('');
-      }
-    }, 3000);
+      }, 3000);
+    }
   }
 }

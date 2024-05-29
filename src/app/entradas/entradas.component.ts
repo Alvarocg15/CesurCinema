@@ -39,6 +39,7 @@ export class EntradasComponent {
   paidFor: boolean = false;
   usuario!: CustomJwtPayload;
   peli: Pelicula[] = [];
+  isLoading = false;
 
 
   constructor(private entradaService: EntradasService, private dialog: MatDialog, private peliculaService: PeliculaService, private salaService: SalaService, private authService: AuthService ) { }
@@ -79,6 +80,7 @@ export class EntradasComponent {
   }
 
   ngOnInit() {
+    this.isLoading = true;
     this.entradaService.getEntradas().subscribe(data => {
       data.forEach(entrada => {
         this.ocupados.push(entrada.entrada_asiento.asiento_id);
@@ -107,6 +109,7 @@ export class EntradasComponent {
     });
     this.getPeliculaById();
     this.getSalaById();
+    this.isLoading = false;
   }
 
   mostrarInfoAsieto(asiento: Asiento) {
@@ -145,18 +148,28 @@ export class EntradasComponent {
     });
   }
 
-  getSalaById() {
+  // getSalaById() {
+  //   let salaId = localStorage.getItem('salaId');
+  //   this.salaService.getSalaById(salaId!).subscribe((salaId) => {
+  //     this.sala = salaId;
+  //     this.nombre_sala = this.sala[0].sala_nombre;
+  //     console.log("sala: "+JSON.stringify(this.sala[0].sala_id));
+  //   });
+  // }
+  async getSalaById() {
     let salaId = localStorage.getItem('salaId');
-    this.salaService.getSalaById(salaId!).subscribe((salaId) => {
-      this.sala = salaId;
+    await this.salaService.getSalaById(salaId!).toPromise().then((salaId) => {
+      this.sala = salaId!;
       this.nombre_sala = this.sala[0].sala_nombre;
-      console.log("sala"+JSON.stringify(this.sala));
+      console.log("sala: "+JSON.stringify(this.sala[0].sala_id));
     });
   }
 
   addEntradas() {
     let horario = localStorage.getItem('horario');
     let horarioObj = JSON.parse(horario!);
+    let sala = localStorage.getItem('salaId');
+    let salaId = JSON.parse(sala!);
     let proyeccionId = horarioObj.proyeccion_id;
     let userId = this.authService.isAuthenticated() ? this.authService.getUserId() : 19;
     this.butacasSeleccionadas.forEach(asiento => {
@@ -164,7 +177,7 @@ export class EntradasComponent {
         entrada_user: userId,
         entrada_pelicula: this.peli[0].pelicula_id,
         entrada_proyeccion: proyeccionId,
-        entrada_sala: this.sala[0].sala_id,
+        entrada_sala: salaId,
         entrada_asiento: asiento.asiento_id
       };
       this.entradaService.addEntradas(entrada).subscribe(data => {
