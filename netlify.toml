@@ -1,6 +1,6 @@
 [build]
   command="ng build"
-  publish="dist/cesurcinema/browser"
+  publish="dist/cesur-cinema/browser"
 
 [[redirects]]
   from = "/*"
