@@ -10,12 +10,15 @@ import { Router } from '@angular/router';
 export class VoseComponent {
 
   vose: Vose[] = [];
+  isLoading = false;
 
   constructor(private voseService: VoseService, private router: Router) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.voseService.getVose().subscribe(data => {
       this.vose = data;
+      this.isLoading = false;
     });
   }
 

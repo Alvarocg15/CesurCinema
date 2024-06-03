@@ -10,14 +10,17 @@ import { Router } from '@angular/router';
 export class ProximamenteComponent {
 
   proximamente: Proximamente[] = [];
+  isLoading = false;
 
 
   constructor(private proximamenteService: ProximamenteService, private router: Router) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.proximamenteService.getProximamente().subscribe(data => {
       this.proximamente = data;
       console.log(this.proximamente);
+      this.isLoading = false;
     });
   }
 

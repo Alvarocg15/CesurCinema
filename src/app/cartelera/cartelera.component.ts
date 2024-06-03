@@ -10,12 +10,15 @@ import { Router } from '@angular/router';
 export class CarteleraComponent {
 
   cartelera: Cartelera[] = [];
+  isLoading = false;
 
   constructor(private carteleraService: CarteleraService, private router: Router) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.carteleraService.getCartelera().subscribe(data => {
       this.cartelera = data;
+      this.isLoading = false;
     });
   }
 
