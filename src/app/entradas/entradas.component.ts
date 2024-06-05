@@ -119,6 +119,7 @@ export class EntradasComponent {
       // El asiento ya está en la lista, así que lo eliminamos
       this.butacasSeleccionadas.splice(index, 1);
       asiento.asiento_clickado = false;
+      this.precio -= 6.5;
     } else {
       // El asiento no está en la lista, así que lo añadimos
       // solo si hay menos de 6 asientos seleccionados

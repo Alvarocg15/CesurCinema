@@ -6,17 +6,24 @@
   <div class="bg-white p-10 md:w-3/4 lg:w-1/2 mx-auto">
 
     <form [formGroup]="registerForm">
+      <div class="flex items-center">
+        <label for="Hora" class="inline-block w-20 mr-6 text-left
+        font-bold text-gray-600">Pelicula</label>
+        <select formControlName="proyeccion_pelicula">
+          <option *ngFor="let pelicula of peliculas" [value]="pelicula.cartelera_id">{{pelicula.cartelera_titulo}}</option>
+        </select>
+      </div>
 
-      <select formControlName="proyeccion_pelicula">
-        <option *ngFor="let pelicula of peliculas" [value]="pelicula.cartelera_id">{{pelicula.cartelera_titulo}}</option>
-      </select>
-
+      <div class="flex items-center my-2">
+        <label for="Hora" class="inline-block w-20 mr-6 text-left
+      font-bold text-gray-600">Sala</label>
       <select formControlName="proyeccion_sala">
         <option *ngFor="let sala of salas" [value]="sala.sala_id">{{sala.sala_nombre}}</option>
       </select>
+      </div>
 
       <div class="flex items-center mb-5">
-        <label for="Hora" class="inline-block w-20 mr-6 text-right
+        <label for="Hora" class="inline-block w-20 mr-6 text-left
                                  font-bold text-gray-600">Hora Comienzo</label>
         <input formControlName="proyeccion_hora_comienzo"
                class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400
