@@ -50,7 +50,7 @@
           [ngClass]="{'input-error': registerForm.get('password2')?.invalid && registerForm.get('password2')?.touched}">
 
         <!-- Mensajes de error -->
-        <div class="text-red-500 text-sm mt-2">
+        <div class="text-white text-sm mt-2">
           <div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched">
             {{ 'register.errors.name' | translate }}
           </div>

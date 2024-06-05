@@ -40,6 +40,7 @@ export class EntradasComponent {
   usuario!: CustomJwtPayload;
   peli: Pelicula[] = [];
   isLoading = false;
+  pequena: boolean = false;
 
 
   constructor(private entradaService: EntradasService, private dialog: MatDialog, private peliculaService: PeliculaService, private salaService: SalaService, private authService: AuthService ) { }
@@ -161,6 +162,9 @@ export class EntradasComponent {
     await this.salaService.getSalaById(salaId!).toPromise().then((salaId) => {
       this.sala = salaId!;
       this.nombre_sala = this.sala[0].sala_nombre;
+      if (this.sala[0].sala_numero_asientos === 16){
+        this.pequena = true;
+      }
       console.log("sala: "+JSON.stringify(this.sala[0].sala_id));
     });
   }
